@@ -1,17 +1,23 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 static class QuestLogic
 {
     public static bool CanFastAttack(bool knightIsAwake) => !knightIsAwake;
 
-    public static bool CanSpy(bool knightIsAwake, bool archerIsAwake, bool prisonerIsAwake) =>
-        (knightIsAwake, archerIsAwake, prisonerIsAwake) switch
+    public static bool CanSpy(bool knightIsAwake, bool archerIsAwake, bool prisonerIsAwake)
+    {
+        var combinedAwakeness = new List<bool>
         {
-            (true, _, _) => true,
-            (_, true, _) => true,
-            (_, _, true) => true,
-            _ => false
+            archerIsAwake, knightIsAwake, prisonerIsAwake
         };
+
+        if (combinedAwakeness.Any(x => x))
+            return true;
+
+        return false;
+    }
 
     public static bool CanSignalPrisoner(bool archerIsAwake, bool prisonerIsAwake)
     {
