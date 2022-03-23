@@ -13,10 +13,7 @@ static class QuestLogic
             archerIsAwake, knightIsAwake, prisonerIsAwake
         };
 
-        if (combinedAwakeness.Any(x => x))
-            return true;
-
-        return false;
+        return combinedAwakeness.Any(x => x);
     }
 
     public static bool CanSignalPrisoner(bool archerIsAwake, bool prisonerIsAwake)
