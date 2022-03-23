@@ -13,13 +13,22 @@ static class QuestLogic
             _ => false
         };
 
-    public static bool CanSignalPrisoner(bool archerIsAwake, bool prisonerIsAwake)
-    {
-        throw new NotImplementedException("Please implement the (static) QuestLogic.CanSignalPrisoner() method");
-    }
+    public static bool CanSignalPrisoner(bool archerIsAwake, bool prisonerIsAwake) =>
+        (archerIsAwake, prisonerIsAwake) switch
+        {
+            (false, true) => true,
+            _ => false
+        };
 
-    public static bool CanFreePrisoner(bool knightIsAwake, bool archerIsAwake, bool prisonerIsAwake, bool petDogIsPresent)
+    public static bool CanFreePrisoner(bool knightIsAwake, bool archerIsAwake, bool prisonerIsAwake,
+        bool petDogIsPresent) => (knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent) switch
     {
-        throw new NotImplementedException("Please implement the (static) QuestLogic.CanFreePrisoner() method");
-    }
+        (true, true, true, true) => false,
+        (true, false, true, false) => false,
+        (_, true, true, false) => false,
+        (_, _, true, false) => true,
+        (_, true, _, true) => false,
+        (_, _, _, true) => true,
+        (_, _, _, false) => false,
+    };
 }
