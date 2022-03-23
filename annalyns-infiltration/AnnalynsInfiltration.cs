@@ -26,9 +26,9 @@ static class QuestLogic
         (true, true, true, true) => false,
         (true, false, true, false) => false,
         (_, true, true, false) => false,
-        (_, _, true, false) => true,
         (_, true, _, true) => false,
-        (_, _, _, true) => true,
+        (_, _, true, false) => true,
         (_, _, _, false) => false,
+        (_, _, _, true) => true,
     };
 }
