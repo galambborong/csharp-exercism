@@ -2,15 +2,16 @@ using System;
 
 static class QuestLogic
 {
-    public static bool CanFastAttack(bool knightIsAwake)
-    {
-        throw new NotImplementedException("Please implement the (static) QuestLogic.CanFastAttack() method");
-    }
+    public static bool CanFastAttack(bool knightIsAwake) => !knightIsAwake;
 
-    public static bool CanSpy(bool knightIsAwake, bool archerIsAwake, bool prisonerIsAwake)
-    {
-        throw new NotImplementedException("Please implement the (static) QuestLogic.CanSpy() method");
-    }
+    public static bool CanSpy(bool knightIsAwake, bool archerIsAwake, bool prisonerIsAwake) =>
+        (knightIsAwake, archerIsAwake, prisonerIsAwake) switch
+        {
+            (true, _, _) => true,
+            (_, true, _) => true,
+            (_, _, true) => true,
+            _ => false
+        };
 
     public static bool CanSignalPrisoner(bool archerIsAwake, bool prisonerIsAwake)
     {
