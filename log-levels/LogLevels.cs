@@ -4,7 +4,9 @@ static class LogLine
 {
     public static string Message(string logLine)
     {
-        throw new NotImplementedException("Please implement the (static) LogLine.Message() method");
+        var logLevelEndIndex = logLine.IndexOf(':') + 2;
+
+        return logLine.Substring(logLevelEndIndex);
     }
 
     public static string LogLevel(string logLine)
