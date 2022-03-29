@@ -27,18 +27,26 @@ public static class LogAnalysis
         if (string.IsNullOrEmpty(last))
             throw new ArgumentNullException(nameof(last));
 
-        var firstIndex = logString.IndexOf(first, StringComparison.Ordinal) + first.Length;
-
-        var mid = logString.Substring(firstIndex);
+        var stringAfterFirst = logString.SubstringAfter(first);
         
-        var lastIndex = mid.IndexOf(last, StringComparison.Ordinal);
+        var lastIndex = stringAfterFirst.IndexOf(last, StringComparison.Ordinal);
 
-        return mid.Substring(0, lastIndex);
+        return stringAfterFirst.Substring(0, lastIndex);
     }
 
-    // TODO: define the 'Message()' extension method on the `string` type
-    public static string Message(this string logString) => "";
+    public static string Message(this string logString)
+    {
+        if (string.IsNullOrEmpty(logString))
+            throw new ArgumentNullException(nameof(logString));
 
-    // TODO: define the 'LogLevel()' extension method on the `string` type
-    public static string LogLevel(this string logString) => "";
+        return logString.SubstringAfter(": ");
+    }
+
+    public static string LogLevel(this string logString)
+    {
+        if (string.IsNullOrEmpty(logString))
+            throw new ArgumentNullException(nameof(logString));
+
+        return logString.SubstringBetween("[", "]");
+    }
 }
