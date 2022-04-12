@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogLevels", "log-levels\Log
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogAnalysis", "log-analysis\LogAnalysis.csproj", "{EAB47F04-6E82-4028-8112-7783AC3C1872}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsAssemble", "cars-assemble\CarsAssemble.csproj", "{151D3591-E913-4A5C-A665-4BCB196281C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{EAB47F04-6E82-4028-8112-7783AC3C1872}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAB47F04-6E82-4028-8112-7783AC3C1872}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAB47F04-6E82-4028-8112-7783AC3C1872}.Release|Any CPU.Build.0 = Release|Any CPU
+		{151D3591-E913-4A5C-A665-4BCB196281C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{151D3591-E913-4A5C-A665-4BCB196281C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{151D3591-E913-4A5C-A665-4BCB196281C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{151D3591-E913-4A5C-A665-4BCB196281C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
