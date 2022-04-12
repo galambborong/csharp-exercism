@@ -14,7 +14,10 @@ static class AssemblyLine
     
     public static double ProductionRatePerHour(int speed)
     {
-        throw new NotImplementedException("Please implement the (static) AssemblyLine.ProductionRatePerHour() method");
+        const int hourlyProductionRate = 221;
+        var successRate = SuccessRate(speed);
+
+        return hourlyProductionRate * speed * successRate;
     }
 
     public static int WorkingItemsPerMinute(int speed)
