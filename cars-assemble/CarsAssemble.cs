@@ -22,6 +22,9 @@ static class AssemblyLine
 
     public static int WorkingItemsPerMinute(int speed)
     {
-        throw new NotImplementedException("Please implement the (static) AssemblyLine.WorkingItemsPerMinute() method");
+        var carsProducedPerHour = (int) ProductionRatePerHour(speed);
+
+        return carsProducedPerHour / 60;
     }
 }
+ 
