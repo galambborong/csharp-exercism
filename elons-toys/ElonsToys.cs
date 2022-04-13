@@ -2,10 +2,7 @@ using System;
 
 class RemoteControlCar
 {
-    public static RemoteControlCar Buy()
-    {
-        return new RemoteControlCar();
-    }
+    public static RemoteControlCar Buy() => new RemoteControlCar();
 
     public string DistanceDisplay()
     {
