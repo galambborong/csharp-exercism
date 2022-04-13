@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogAnalysis", "log-analysis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsAssemble", "cars-assemble\CarsAssemble.csproj", "{151D3591-E913-4A5C-A665-4BCB196281C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElonsToys", "elons-toys\ElonsToys.csproj", "{E0CE3E80-A724-4E86-B856-8F5E08994EBE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{151D3591-E913-4A5C-A665-4BCB196281C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{151D3591-E913-4A5C-A665-4BCB196281C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{151D3591-E913-4A5C-A665-4BCB196281C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0CE3E80-A724-4E86-B856-8F5E08994EBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0CE3E80-A724-4E86-B856-8F5E08994EBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0CE3E80-A724-4E86-B856-8F5E08994EBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0CE3E80-A724-4E86-B856-8F5E08994EBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
