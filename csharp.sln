@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElonsToys", "elons-toys\Elo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RollTheDie", "roll-the-die\RollTheDie.csproj", "{A11EDA2B-D7E4-40FC-A3ED-3D22041A1AE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimFromMarketing", "tim-from-marketing\TimFromMarketing.csproj", "{EF32F234-D79E-4B54-B9E6-BFED8F611257}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,5 +62,9 @@ Global
 		{A11EDA2B-D7E4-40FC-A3ED-3D22041A1AE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A11EDA2B-D7E4-40FC-A3ED-3D22041A1AE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A11EDA2B-D7E4-40FC-A3ED-3D22041A1AE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF32F234-D79E-4B54-B9E6-BFED8F611257}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF32F234-D79E-4B54-B9E6-BFED8F611257}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF32F234-D79E-4B54-B9E6-BFED8F611257}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF32F234-D79E-4B54-B9E6-BFED8F611257}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
