@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RollTheDie", "roll-the-die\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimFromMarketing", "tim-from-marketing\TimFromMarketing.csproj", "{EF32F234-D79E-4B54-B9E6-BFED8F611257}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BirdWatcher", "bird-watcher\BirdWatcher.csproj", "{2B40D158-8830-40D8-901C-C8A50B38F8C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,5 +68,9 @@ Global
 		{EF32F234-D79E-4B54-B9E6-BFED8F611257}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF32F234-D79E-4B54-B9E6-BFED8F611257}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF32F234-D79E-4B54-B9E6-BFED8F611257}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B40D158-8830-40D8-901C-C8A50B38F8C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B40D158-8830-40D8-901C-C8A50B38F8C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B40D158-8830-40D8-901C-C8A50B38F8C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B40D158-8830-40D8-901C-C8A50B38F8C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
