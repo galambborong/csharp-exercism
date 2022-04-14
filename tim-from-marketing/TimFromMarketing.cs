@@ -1,5 +1,3 @@
-using System;
-
 static class Badge
 {
     private const string Owner = "OWNER";
