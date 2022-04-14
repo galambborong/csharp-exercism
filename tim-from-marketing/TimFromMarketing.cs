@@ -6,20 +6,12 @@ static class Badge
 
     public static string Print(int? id, string name, string? department)
     {
-        if (string.IsNullOrEmpty(name))
-            throw new ArgumentNullException(nameof(name));
+        var dept = (department ?? Owner).ToUpper();
 
-        if (id is null)
+        return id switch
         {
-            if (string.IsNullOrEmpty(department))
-                return $"{name} - {Owner}";
-
-            return $"{name} - {department.ToUpper()}";
-        }
-
-        if (string.IsNullOrEmpty(department))
-            return $"[{id}] - {name} - {Owner}";
-
-        return $"[{id}] - {name} - {department.ToUpper()}";
+            null => $"{name} - {dept}",
+            _ => $"[{id}] - {name} - {dept}"
+        };
     }
 }
