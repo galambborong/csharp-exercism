@@ -2,7 +2,7 @@ using System.Linq;
 
 class BirdCount
 {
-    private static int[] _birdsPerDay;
+    private readonly int[] _birdsPerDay;
 
     public BirdCount(int[] birdsPerDay)
     {
