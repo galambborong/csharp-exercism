@@ -35,7 +35,7 @@ public static class Identifier
     {
         var chars = str.ToCharArray();
 
-        return chars.Any(char.IsLetter) ? str : "";
+        return !chars.Any(char.IsLetter) ? "" : str;
     }
 
     private static string HandleControlChar(this string str)
