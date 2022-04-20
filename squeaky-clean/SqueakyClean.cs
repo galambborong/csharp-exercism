@@ -2,6 +2,7 @@ using System.Linq;
 
 public static class Identifier
 {
+    private const char SnakeCaseSeparator = '-';
     private const char ControlChar = '\0';
     private const string ControlSubstitution = "CTRL";
     public static string Clean(string identifier)
@@ -11,45 +12,39 @@ public static class Identifier
 
     private static string ConvertToCamel(this string str)
     {
-        var charArr = str.ToCharArray();
+        var chars = str.ToCharArray();
 
-        if (charArr.All(c => c != '-')) return str;
+        if (!chars.Any(c => c == SnakeCaseSeparator))
+            return str;
+
+        for (var i = 0; i < chars.Length; i++)
         {
-            for (var i = 0; i < charArr.Length; i++)
+            if (chars[i] == SnakeCaseSeparator)
             {
-                if (charArr[i] == '-')
-                {
-                    charArr[i + 1] = char.ToUpperInvariant(charArr[i + 1]);
-                }
+                chars[i + 1] = char.ToUpperInvariant(chars[i + 1]);
             }
-
-            var newChars = charArr.Where(c => c != '-').ToArray();
-
-            return new string(newChars);
         }
+
+        var newChars = chars.Where(c => c != '-').ToArray();
+
+        return string.Concat(newChars);
 
     }
 
     private static string CheckForLetters(this string str)
     {
-        var charArr = str.ToCharArray();
+        var chars = str.ToCharArray();
 
-        if (!charArr.Any(char.IsLetter))
-            return "";
-
-        return str;
+        return chars.Any(char.IsLetter) ? str : "";
     }
 
     private static string HandleControlChar(this string str)
     {
-        var charArr = str.ToCharArray();
-        if (!charArr.Any(char.IsControl))
-            return str;
-        
-        var index = str.IndexOf(ControlChar);
-        var newStr = str.Insert(index, ControlSubstitution);
+        var controls = new char[] { ControlChar };
+        var controlString = string.Concat(controls);
 
-        return newStr.Remove(index + 4, 1);
+        var result = str.Replace(controlString, ControlSubstitution);
+        return result;
     }
 
     private static string HandleSpaces(this string str)
