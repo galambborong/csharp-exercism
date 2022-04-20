@@ -1,13 +1,20 @@
 using System.Linq;
+using System.Text;
 
 public static class Identifier
 {
     private const char SnakeCaseSeparator = '-';
     private const char ControlChar = '\0';
     private const string ControlSubstitution = "CTRL";
+
+    private static StringBuilder _identifier;
     public static string Clean(string identifier)
     {
-        return identifier.ConvertToCamel().CheckForLetters().HandleControlChar().HandleSpaces();
+        var controls = new char[] { ControlChar };
+        var controlString = string.Concat(controls);
+        _identifier = new StringBuilder(identifier);
+
+        return _identifier.Replace(' ', '_').Replace(controlString, ControlSubstitution).ToString();
     }
 
     private static string ConvertToCamel(this string str)
