@@ -8,16 +8,29 @@ public static class Identifier
     private const string ControlSubstitution = "CTRL";
 
     private static StringBuilder _identifier;
+
     public static string Clean(string identifier)
     {
-        
-        var controls = new char[] { ControlChar };
-        var controlString = string.Concat(controls);
         _identifier = new StringBuilder(identifier);
 
-        _identifier = _identifier.CheckForLetters();
+        var control = new char[] { ControlChar }.ToString();
 
-        return _identifier.Replace(' ', '_').ToString();
+        for (int i = 0; i < _identifier.Length; i++)
+        {
+            var ch = _identifier[i];
+
+            if (char.IsControl(ch))
+            {
+                _identifier.Remove(i, 1);
+                _identifier.Insert(i, ControlSubstitution);
+            }
+
+            if (ch == ' ')
+                _identifier.Replace(' ', '_');
+        }
+
+
+        return _identifier.ToString();
     }
 
     private static string ConvertToCamel(this string str)
@@ -41,36 +54,4 @@ public static class Identifier
 
     }
 
-    private static StringBuilder CheckForLetters(this StringBuilder str)
-    {
-        for (var i = 0; i < str.Length; i++)
-        {
-            var ch = str[i];
-            if (!char.IsLetter(ch))
-                return new StringBuilder();
-        }
-
-        return str;
-    }
-
-    private static StringBuilder HandleControlChar(this StringBuilder str)
-    {
-        int index = 0;
-        for (var i = 0; i < str.Length; i++)
-        {
-            var ch = str[i];
-            if (char.IsControl(ch))
-            {
-                index = i;
-            }
-        }
-
-        return str.Insert(index, ControlSubstitution);
-        
-    }
-
-    private static string HandleSpaces(this string str)
-    {
-        return str.Replace(' ', '_');
-    }
 }
