@@ -10,11 +10,14 @@ public static class Identifier
     private static StringBuilder _identifier;
     public static string Clean(string identifier)
     {
+        
         var controls = new char[] { ControlChar };
         var controlString = string.Concat(controls);
         _identifier = new StringBuilder(identifier);
 
-        return _identifier.Replace(' ', '_').Replace(controlString, ControlSubstitution).ToString();
+        _identifier = _identifier.CheckForLetters();
+
+        return _identifier.Replace(' ', '_').ToString();
     }
 
     private static string ConvertToCamel(this string str)
@@ -38,20 +41,32 @@ public static class Identifier
 
     }
 
-    private static string CheckForLetters(this string str)
+    private static StringBuilder CheckForLetters(this StringBuilder str)
     {
-        var chars = str.ToCharArray();
+        for (var i = 0; i < str.Length; i++)
+        {
+            var ch = str[i];
+            if (!char.IsLetter(ch))
+                return new StringBuilder();
+        }
 
-        return !chars.Any(char.IsLetter) ? "" : str;
+        return str;
     }
 
-    private static string HandleControlChar(this string str)
+    private static StringBuilder HandleControlChar(this StringBuilder str)
     {
-        var controls = new char[] { ControlChar };
-        var controlString = string.Concat(controls);
+        int index = 0;
+        for (var i = 0; i < str.Length; i++)
+        {
+            var ch = str[i];
+            if (char.IsControl(ch))
+            {
+                index = i;
+            }
+        }
 
-        var result = str.Replace(controlString, ControlSubstitution);
-        return result;
+        return str.Insert(index, ControlSubstitution);
+        
     }
 
     private static string HandleSpaces(this string str)
