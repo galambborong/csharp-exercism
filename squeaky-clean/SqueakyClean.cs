@@ -13,9 +13,7 @@ public static class Identifier
     {
         _identifier = new StringBuilder(identifier);
 
-        var control = new char[] { ControlChar }.ToString();
-
-        for (int i = 0; i < _identifier.Length; i++)
+        for (var i = 0; i < _identifier.Length; i++)
         {
             var ch = _identifier[i];
 
